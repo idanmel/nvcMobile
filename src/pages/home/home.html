@@ -1,14 +1,30 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title padding text-center>
+      Pocket NVC
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+ <ion-card>
+   <ion-card-header>
+     Random Marshall Quote
+   </ion-card-header>
+   <ion-card-content>
+     {{ quote }}
+   </ion-card-content>
+   <ion-row>
+     <ion-col text-right>
+       <ion-icon ios="ios-quote" md="md-quote"></ion-icon>
+     </ion-col>
+   </ion-row>
+ </ion-card>
+
+  <hr>
+  <button ion-button block [navPush]="feelingsUnmetPush">Feelings (Unmet Needs)</button>
+  <hr>
+  <button ion-button block>Feelings (Met Needs)</button>
+  <hr>
+  <button ion-button block>Needs</button>
 </ion-content>
