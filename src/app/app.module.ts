@@ -7,12 +7,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FeelingsUnmetPage } from '../pages/feelings-unmet/feelings-unmet'
+import { FeelingsMetPage } from '../pages/feelings-met/feelings-met'
+import { NeedsPage } from '../pages/needs/needs'
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    FeelingsUnmetPage
+    FeelingsUnmetPage,
+    FeelingsMetPage,
+    NeedsPage
   ],
   imports: [
     BrowserModule,
@@ -22,7 +26,9 @@ import { FeelingsUnmetPage } from '../pages/feelings-unmet/feelings-unmet'
   entryComponents: [
     MyApp,
     HomePage,
-    FeelingsUnmetPage
+    FeelingsUnmetPage,
+    FeelingsMetPage,
+    NeedsPage
   ],
   providers: [
     StatusBar,
