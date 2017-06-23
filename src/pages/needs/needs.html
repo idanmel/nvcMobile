@@ -1,98 +1,12 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title padding>Needs</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-  <ion-content>
-    <ion-item-group>
-      <ion-item-divider color="primary">CONNECTION</ion-item-divider>
-      <ion-item>acceptance</ion-item>
-      <ion-item>affection</ion-item>
-      <ion-item>appreciation</ion-item>
-      <ion-item>belonging</ion-item>
-      <ion-item>cooperation</ion-item>
-      <ion-item>communication</ion-item>
-      <ion-item>closeness</ion-item>
-      <ion-item>community</ion-item>
-      <ion-item>companionship</ion-item>
-      <ion-item>compassion</ion-item>
-      <ion-item>consideration</ion-item>
-      <ion-item>consistency</ion-item>
-      <ion-item>empathy</ion-item>
-      <ion-item>inclusion</ion-item>
-      <ion-item>intimacy</ion-item>
-      <ion-item>love</ion-item>
-      <ion-item>mutuality</ion-item>
-      <ion-item>nurturing</ion-item>
-      <ion-item>respect/self-respect</ion-item>
-      <ion-item>safety</ion-item>
-      <ion-item>security</ion-item>
-      <ion-item>stability</ion-item>
-      <ion-item>support</ion-item>
-      <ion-item>to know and be known</ion-item>
-      <ion-item>to see and be seen</ion-item>
-      <ion-item>to understand and</ion-item>
-      <ion-item>be understood</ion-item>
-      <ion-item>trust</ion-item>
-      <ion-item>warmth</ion-item>
-      <ion-item-divider color="primary">PHYSICAL WELL-BEING</ion-item-divider>
-      <ion-item>air</ion-item>
-      <ion-item>food</ion-item>
-      <ion-item>movement/exercise</ion-item>
-      <ion-item>rest/sleep</ion-item>
-      <ion-item>sexual expression</ion-item>
-      <ion-item>safety</ion-item>
-      <ion-item>shelter</ion-item>
-      <ion-item>touch</ion-item>
-      <ion-item>water</ion-item>
-      <ion-item-divider color="primary">HONESTY</ion-item-divider>
-      <ion-item>authenticity</ion-item>
-      <ion-item>integrity</ion-item>
-      <ion-item>presence</ion-item>
-      <ion-item-divider color="primary">PLAY</ion-item-divider>
-      <ion-item>joy</ion-item>
-      <ion-item>humor</ion-item>
-      <ion-item-divider color="primary">PEACE</ion-item-divider>
-      <ion-item>beauty</ion-item>
-      <ion-item>communion</ion-item>
-      <ion-item>ease</ion-item>
-      <ion-item>equality</ion-item>
-      <ion-item>harmony</ion-item>
-      <ion-item>inspiration</ion-item>
-      <ion-item>order</ion-item>
-      <ion-item-divider color="primary">AUTONOMY</ion-item-divider>
-      <ion-item>choice</ion-item>
-      <ion-item>freedom</ion-item>
-      <ion-item>independence</ion-item>
-      <ion-item>space</ion-item>
-      <ion-item>spontaneity</ion-item>
-      <ion-item-divider color="primary">MEANING</ion-item-divider>
-      <ion-item>awareness</ion-item>
-      <ion-item>celebration of life</ion-item>
-      <ion-item>challenge</ion-item>
-      <ion-item>clarity</ion-item>
-      <ion-item>competence</ion-item>
-      <ion-item>consciousness</ion-item>
-      <ion-item>contribution</ion-item>
-      <ion-item>creativity</ion-item>
-      <ion-item>discovery</ion-item>
-      <ion-item>efficacy</ion-item>
-      <ion-item>effectiveness</ion-item>
-      <ion-item>growth</ion-item>
-      <ion-item>hope</ion-item>
-      <ion-item>learning</ion-item>
-      <ion-item>mourning</ion-item>
-      <ion-item>participation</ion-item>
-      <ion-item>purpose</ion-item>
-      <ion-item>self-expression</ion-item>
-      <ion-item>stimulation</ion-item>
-      <ion-item>to matter</ion-item>
-      <ion-item>understanding</ion-item>
-    </ion-item-group>
-  </ion-content>
+  <ion-item-group *ngFor="let needsGroup of needsList">
+    <ion-item-divider detail-push color="secondary" (click)="needsGroup.hidden = !needsGroup.hidden">{{ needsGroup.name }} </ion-item-divider>
+    <ion-item *ngFor="let item of needsGroup.items" [hidden]="needsGroup.hidden">{{ item }}</ion-item>
+  </ion-item-group>
 </ion-content>

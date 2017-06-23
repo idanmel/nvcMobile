@@ -1,24 +1,16 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
 
-/**
- * Generated class for the FeelingsUnmetPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
-@IonicPage()
+import { FeelingsUnmet } from '../../data/feelings-unmet'
+import { NvcList } from '../../models/nvc-list.model'
+
 @Component({
   selector: 'page-feelings-unmet',
   templateUrl: 'feelings-unmet.html',
 })
-export class FeelingsUnmetPage {
+export class FeelingsUnmetPage implements OnInit {
+  feelingsUnmet: NvcList[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  ngOnInit() {
+    this.feelingsUnmet = FeelingsUnmet;
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad FeelingsUnmetPage');
-  }
-
 }

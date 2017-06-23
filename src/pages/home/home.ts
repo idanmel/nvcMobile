@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import quotes from '../../data/quotes/quotes'
+import quotes from '../../data/quotes'
 import { FeelingsUnmetPage } from "../feelings-unmet/feelings-unmet";
 import { FeelingsMetPage } from "../feelings-met/feelings-met";
 import { NeedsPage } from "../needs/needs";

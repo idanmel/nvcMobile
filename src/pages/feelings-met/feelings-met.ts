@@ -1,16 +1,16 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
 
+import { FeelingsMet } from '../../data/feelings-met'
+import { NvcList } from '../../models/nvc-list.model'
 
-@IonicPage()
 @Component({
   selector: 'page-feelings-met',
   templateUrl: 'feelings-met.html',
 })
-export class FeelingsMetPage {
+export class FeelingsMetPage implements OnInit {
+  feelingsMet: NvcList[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  ngOnInit() {
+    this.feelingsMet = FeelingsMet;
   }
-
-
 }

@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
 
-@IonicPage()
+import { Needs } from '../../data/needs'
+import { NvcList } from '../../models/nvc-list.model'
+
 @Component({
   selector: 'page-needs',
   templateUrl: 'needs.html',
 })
-export class NeedsPage {
+export class NeedsPage implements OnInit {
+  needsList: NvcList[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  ngOnInit() {
+    this.needsList = Needs;
   }
-
 }

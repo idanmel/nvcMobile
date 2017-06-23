@@ -1,112 +1,12 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title padding>Feelings: Met Needs</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-  <ion-content>
-    <ion-item-group>
-      <ion-item-divider color="primary">AFFECTIONATE</ion-item-divider>
-      <ion-item>compassionate</ion-item>
-      <ion-item>friendly</ion-item>
-      <ion-item>loving</ion-item>
-      <ion-item>open hearted</ion-item>
-      <ion-item>sympathetic</ion-item>
-      <ion-item>tender</ion-item>
-      <ion-item>warm</ion-item>
-      <ion-item-divider color="primary">ENGAGED</ion-item-divider>
-      <ion-item>absorbed</ion-item>
-      <ion-item>alert</ion-item>
-      <ion-item>curious</ion-item>
-      <ion-item>engrossed</ion-item>
-      <ion-item>enchanted</ion-item>
-      <ion-item>entranced</ion-item>
-      <ion-item>fascinated</ion-item>
-      <ion-item>interested</ion-item>
-      <ion-item>intrigued</ion-item>
-      <ion-item>involved</ion-item>
-      <ion-item>spellbound</ion-item>
-      <ion-item>stimulated</ion-item>
-      <ion-item-divider color="primary">HOPEFUL</ion-item-divider>
-      <ion-item>expectant</ion-item>
-      <ion-item>encouraged</ion-item>
-      <ion-item>optimistic</ion-item>
-      <ion-item-divider color="primary">CONFIDENT</ion-item-divider>
-      <ion-item>empowered</ion-item>
-      <ion-item>open</ion-item>
-      <ion-item>proud</ion-item>
-      <ion-item>safe</ion-item>
-      <ion-item>secure</ion-item>
-      <ion-item-divider color="primary">EXCITED</ion-item-divider>
-      <ion-item>amazed</ion-item>
-      <ion-item>animated</ion-item>
-      <ion-item>ardent</ion-item>
-      <ion-item>aroused</ion-item>
-      <ion-item>astonished</ion-item>
-      <ion-item>dazzled</ion-item>
-      <ion-item>eager</ion-item>
-      <ion-item>energetic</ion-item>
-      <ion-item>enthusiastic</ion-item>
-      <ion-item>giddy</ion-item>
-      <ion-item>invigorated</ion-item>
-      <ion-item>lively</ion-item>
-      <ion-item>passionate</ion-item>
-      <ion-item>surprised</ion-item>
-      <ion-item>vibrant</ion-item>
-      <ion-item-divider color="primary">GRATEFUL</ion-item-divider>
-      <ion-item>appreciative</ion-item>
-      <ion-item>moved</ion-item>
-      <ion-item>thankful</ion-item>
-      <ion-item>touched</ion-item>
-      <ion-item-divider color="primary">INSPIRED</ion-item-divider>
-      <ion-item>amazed</ion-item>
-      <ion-item>awed</ion-item>
-      <ion-item>wonder</ion-item>
-      <ion-item-divider color="primary">JOYFUL</ion-item-divider>
-      <ion-item>amused</ion-item>
-      <ion-item>delighted</ion-item>
-      <ion-item>glad</ion-item>
-      <ion-item>happy</ion-item>
-      <ion-item>jubilant</ion-item>
-      <ion-item>pleased</ion-item>
-      <ion-item>tickled</ion-item>
-      <ion-item-divider color="primary">EXHILARATED</ion-item-divider>
-      <ion-item>blissful</ion-item>
-      <ion-item>ecstatic</ion-item>
-      <ion-item>elated</ion-item>
-      <ion-item>enthralled</ion-item>
-      <ion-item>exuberant</ion-item>
-      <ion-item>radiant</ion-item>
-      <ion-item>rapturous</ion-item>
-      <ion-item>thrilled</ion-item>
-      <ion-item-divider color="primary">PEACEFUL</ion-item-divider>
-      <ion-item>calm</ion-item>
-      <ion-item>clear headed</ion-item>
-      <ion-item>comfortable</ion-item>
-      <ion-item>centered</ion-item>
-      <ion-item>content</ion-item>
-      <ion-item>equanimous</ion-item>
-      <ion-item>fulfilled</ion-item>
-      <ion-item>mellow</ion-item>
-      <ion-item>quiet</ion-item>
-      <ion-item>relaxed</ion-item>
-      <ion-item>relieved</ion-item>
-      <ion-item>satisfied</ion-item>
-      <ion-item>serene</ion-item>
-      <ion-item>still</ion-item>
-      <ion-item>tranquil</ion-item>
-      <ion-item>trusting</ion-item>
-      <ion-item-divider color="primary">REFRESHED</ion-item-divider>
-      <ion-item>enlivened</ion-item>
-      <ion-item>rejuvenated</ion-item>
-      <ion-item>renewed</ion-item>
-      <ion-item>rested</ion-item>
-      <ion-item>restored</ion-item>
-      <ion-item>revived</ion-item>
-    </ion-item-group>
-  </ion-content>
+  <ion-item-group *ngFor="let feelingsMetGroup of feelingsMet">
+    <ion-item-divider detail-push color="secondary" (click)="feelingsMetGroup.hidden = !feelingsMetGroup.hidden">{{ feelingsMetGroup.name }} </ion-item-divider>
+    <ion-item *ngFor="let item of feelingsMetGroup.items" [hidden]="feelingsMetGroup.hidden">{{ item }}</ion-item>
+  </ion-item-group>
 </ion-content>
